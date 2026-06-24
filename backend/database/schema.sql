@@ -1,6 +1,5 @@
 -- ShopKart E-Commerce Database Schema
-CREATE DATABASE IF NOT EXISTS shopkart_db;
-USE shopkart_db;
+
 
 -- Users Table
 CREATE TABLE IF NOT EXISTS users (
