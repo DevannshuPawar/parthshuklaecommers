@@ -31,21 +31,23 @@ const HomePage = () => {
     <div className="home-page">
       <aside className="category-sidebar">
         <h3>Categories</h3>
-        <button
-          className={`category-item ${selectedCategory === 'all' ? 'active' : ''}`}
-          onClick={() => setSelectedCategory('all')}
-        >
-          🏷️ All
-        </button>
-        {categories.map(cat => (
+        <div className="cats-scroll">
           <button
-            key={cat.id}
-            className={`category-item ${selectedCategory === String(cat.id) ? 'active' : ''}`}
-            onClick={() => setSelectedCategory(String(cat.id))}
+            className={`category-item ${selectedCategory === 'all' ? 'active' : ''}`}
+            onClick={() => setSelectedCategory('all')}
           >
-            {cat.name}
+            🏷️ All
           </button>
-        ))}
+          {categories.map(cat => (
+            <button
+              key={cat.id}
+              className={`category-item ${selectedCategory === String(cat.id) ? 'active' : ''}`}
+              onClick={() => setSelectedCategory(String(cat.id))}
+            >
+              {cat.name}
+            </button>
+          ))}
+        </div>
       </aside>
 
       <div className="products-section">
